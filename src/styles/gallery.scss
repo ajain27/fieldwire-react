@@ -1,0 +1,14 @@
+@import './_base';
+
+.card-img-top {
+    height: 250px !important;
+    width: 345px !important;
+    cursor: pointer !important;
+}
+
+.dialog {
+    box-shadow: 0 8px 6px -6px black;
+    position: static;
+    left: 20%;
+    top: 10%;
+}
