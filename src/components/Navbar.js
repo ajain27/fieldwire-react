@@ -4,11 +4,12 @@ import '../styles/navbar.scss';
 function Navbar() {
     return (
         <>
-            <nav className="navbar navbar-dark default-color">
-                <form className="form-inline my-2 my-lg-0 ml-auto">
-                    <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="search btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-                </form>
+            <nav className="search navbar navbar-expand-lg">
+                <a className="navbar-brand" href="#">Navbar</a>                
+                    <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
             </nav>
         </>
     )
