@@ -12,6 +12,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-fullscreen-image": "0.0.3",
     "react-icons": "^4.1.0",
     "react-scripts": "4.0.2",
     "react-spinners": "^0.9.0",
