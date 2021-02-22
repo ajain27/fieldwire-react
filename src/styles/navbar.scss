@@ -1,0 +1,35 @@
+@import '__base.scss';
+
+.fw {
+    color: black;
+}
+
+.search {
+    background-color: $base-color !important;
+}
+
+.navbar {
+    border: 1px solid #f7b244 !important;
+}
+
+.searchbtn {
+    color: black !important;
+    border: 1px solid black !important;
+}
+
+.searchbtn:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background-color: #242424 !important;
+    color: #f7b244 !important;
+}
+.searchInput {
+    width: 250px !important;
+}
+
+.fa-icons {
+    cursor: pointer;
+}
+
+.awesome-font {
+    font-family: Apple Chancery, cursive;
+}

@@ -6,29 +6,6 @@
     cursor: pointer !important;
 }
 
-.fw {
-    color: black;
-}
-
-.search {
-    background-color: $base-color !important;
-}
-
-.navbar {
-    border: 1px solid #f7b244 !important;
-}
-
-.searchbtn {
-    // background-image: linear-gradient(to right, black, #f7b244);
-    color: black !important;
-}
-
-.searchbtn:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background-color: #242424 !important;
-    color: #f7b244 !important;
-}
-
 .active {
     background: RGBA(0,0,0,.5) no-repeat center;
     width: 60% !important;

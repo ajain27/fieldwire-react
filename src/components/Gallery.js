@@ -1,11 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ClipLoader } from "react-spinners";
 import '../styles/gallery.scss';
 import { css } from "@emotion/core";
-import { ImageGroup, Image } from 'react-fullscreen-image'
 
 
-function Gallery() {
+function Gallery({ search }) {
 
     const [images, setImages] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
@@ -22,35 +21,40 @@ function Gallery() {
     margin: 0 auto;
     `;
 
-    function handleSearch(e) {
-        e.preventDefault();
-        setShowLoader(true);
-        const query = handleOnchange();
-        fetch(`https://api.imgur.com/3/gallery/search/?q=${query}`, {
-            headers: new Headers({
-                "Authorization": "Client-ID b067d5cb828ec5a"
+    useEffect(() => {
+        handleSearch();
+    }, [search])
+
+    function handleSearch(e) {  
+        if (search !== "") {
+            setShowLoader(true);
+            fetch(`https://api.imgur.com/3/gallery/search/?q=${search}`, {
+                headers: new Headers({
+                    "Authorization": "Client-ID b067d5cb828ec5a"
+                })
+            }).then(res => {
+                const promise = res.json();
+                promise.then(response => {
+                    try {
+                        const imageData = response.data;
+                        setImages(imageData);
+                        setShowLoader(false);
+                    } catch (error) {
+                        setError(error);
+                    }
+                })
             })
-        }).then(res => {
-            const promise = res.json();
-            promise.then(response => {
-                try {
-                    const imageData = response.data;
-                    setImages(imageData);
-                    setShowLoader(false);
-                } catch (error) {
+                .catch(error => {
                     setError(error);
-                }
-            })
-        })
-            .catch(error => {
-                setError(error);
-            })
+                })
+        }
+
     }
 
-    function handleOnchange() {
-        const query = inputElement.current.value;
-        return query;
-    }
+    // function handleOnchange() {
+    //     const query = inputElement.current.value;
+    //     return query;
+    // }
 
     function handleImgError(e) {
         e.target.src = "https://picsum.photos/200/300"
@@ -64,9 +68,9 @@ function Gallery() {
 
     return (
         <div>
-            <div className="container">
+            {/* <div className="container">
                 <nav className="search navbar">
-                    <form className="form-inline my-2 my-lg-0 m-auto w-100" onSubmit={handleSearch}>
+                    <form className="form-inline my-2 my-lg-0 m-auto w-100">
                         <input
                             className="form-control mr-sm-2 w-50"
                             type="search"
@@ -78,7 +82,7 @@ function Gallery() {
                             type="submit">Search</button>
                     </form>
                 </nav>
-            </div>
+            </div> */}
 
             <div className="container m-auto pt-5">
                 <div className="row d-flex">
