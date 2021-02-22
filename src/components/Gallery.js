@@ -25,7 +25,7 @@ function Gallery({ search }) {
         handleSearch();
     }, [search])
 
-    function handleSearch(e) {  
+    function handleSearch(e) {
         if (search !== "") {
             setShowLoader(true);
             fetch(`https://api.imgur.com/3/gallery/search/?q=${search}`, {
@@ -68,23 +68,7 @@ function Gallery({ search }) {
 
     return (
         <div>
-            {/* <div className="container">
-                <nav className="search navbar">
-                    <form className="form-inline my-2 my-lg-0 m-auto w-100">
-                        <input
-                            className="form-control mr-sm-2 w-50"
-                            type="search"
-                            placeholder="Search"
-                            ref={inputElement}
-                            aria-label="Search" />
-                        <button
-                            className="btn btn-outline-success searchbtn my-2 my-sm-0"
-                            type="submit">Search</button>
-                    </form>
-                </nav>
-            </div> */}
-
-            <div className="container m-auto pt-5">
+            <div className="container m-auto pt-2">
                 <div className="row d-flex">
                     {
                         showLoader ? <ClipLoader size={100} color={spinnerColor} css={override} /> :
