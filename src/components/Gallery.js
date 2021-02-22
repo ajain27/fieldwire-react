@@ -26,7 +26,7 @@ function Gallery({ search }) {
     }, [search])
 
     function handleSearch(e) {
-        if (search !== "") {
+        if (search !== "" || search !== null) {
             setShowLoader(true);
             fetch(`https://api.imgur.com/3/gallery/search/?q=${search}`, {
                 headers: new Headers({
@@ -50,11 +50,6 @@ function Gallery({ search }) {
         }
 
     }
-
-    // function handleOnchange() {
-    //     const query = inputElement.current.value;
-    //     return query;
-    // }
 
     function handleImgError(e) {
         e.target.src = "https://picsum.photos/200/300"

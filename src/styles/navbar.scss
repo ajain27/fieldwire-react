@@ -1,9 +1,4 @@
 @import '__base.scss';
-
-.fw {
-    color: black;
-}
-
 .search {
     background-color: $base-color !important;
 }
@@ -28,6 +23,7 @@
 
 .fa-icons {
     cursor: pointer;
+    color: black;
 }
 
 .awesome-font {
